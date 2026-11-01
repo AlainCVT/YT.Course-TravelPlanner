@@ -94,4 +94,4 @@ pnpm start
 
 ## Credits
 
-https://www.youtube.com/watch?v=j7Qu65rUcsY
+[Build a FullStack Travel Planner App With NextJS, Google Maps, PostgreSQL](https://www.youtube.com/watch?v=j7Qu65rUcsY)
