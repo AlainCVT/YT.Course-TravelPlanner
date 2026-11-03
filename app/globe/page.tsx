@@ -3,13 +3,13 @@
 import { clsx } from "cn";
 import { Loader2, MapPin } from "lucide-react";
 import dynamic from "next/dynamic";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { GlobeMethods } from "react-globe.gl";
 
 import type { TripLocation } from "@/app/api/trips/route";
 import Container from "@/components/Container";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ThemeContext } from "@/contexts/theme";
+import { useTheme } from "@/contexts/theme";
 import { pluralize } from "@/utils/string";
 
 const Globe = dynamic(() => import("react-globe.gl"), {
@@ -22,7 +22,7 @@ const Globe = dynamic(() => import("react-globe.gl"), {
 });
 
 export default function GlobePage() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const wrapperRef = useRef<HTMLDivElement>(null);

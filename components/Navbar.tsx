@@ -3,9 +3,8 @@
 import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import type { Session } from "next-auth";
-import { useContext } from "react";
 
-import { ThemeContext } from "@/contexts/theme";
+import { useTheme } from "@/contexts/theme";
 import { login, logout } from "@/lib/actions/auth";
 
 import Icon from "./Icon";
@@ -13,7 +12,7 @@ import Logo from "./Logo";
 import { Button } from "./ui/button";
 
 export default function Navbar({ session }: { session: Session | null }) {
-  const { toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useTheme();
 
   return (
     <header className="pointer-events-none sticky top-0 z-100 container mx-auto px-2 py-4">
